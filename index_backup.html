@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3 Drop Player</title>
+    <link rel="stylesheet" href="styles.css">  <!-- ✅ CSS 연결 -->
+</head>
+<body>
+
+    <!-- 🎵 Drop Zone 화면 -->
+  <div id="drop-zone">
+	<h4>drag & drop</h4>
+        <img src="drop-in.png" alt="Drag & Drop MP3 Here" id="drop-image">
+    </div>
+
+    <!-- 🎛 Controller 화면 (초기에는 숨김) -->
+    <div id="player-container" style="display: none; flex-direction: column; align-items: center; height: 100vh; overflow: auto;">
+        
+        <!-- 🔙 Drop Zone으로 돌아가기 버튼 -->
+        <button id="back-button" class="round-button" onclick="goBack()">⬅ 돌아가기</button>
+
+        <!-- 🎵 제목 -->
+	<h1 id="player-title">MP3 Drop Player</h1>
+	
+	<audio id="audio-player" controls></audio>
+	
+        <div id="waveform-container">
+          <canvas id="waveform" width="1200" height="150"></canvas>
+        </div>
+	
+	<button id="rewind">⏪ -5s</button>
+	<button id="forward">⏩ +5s</button>
+
+        <!-- 🔁 루프 버튼 -->
+        <button id="loop-button" class="round-button">🔁 Loop Off</button>
+
+        <!-- 🎯 구간 반복 (A-B Loop) 버튼 -->
+        <div id="loop-controls">
+            <button id="set-a">A 설정</button>
+            <button id="set-b">B 설정</button>
+            <button id="toggle-loop">🔁 구간 반복</button>
+            <span id="loop-status">Off</span>
+        </div>
+
+        <!-- ⏩ 속도 조절 컨트롤 -->
+        <div id="player-controls">
+            <button id="slow-down">⏪ 느리게</button>
+            <input id="speed-bar" type="range" min="0.5" max="1.5" step="0.1" value="1.0">
+            <button id="speed-up">⏩ 빠르게</button>
+	    <span id="speed-label">1.0x</span> <!-- 속도 표시 -->
+	</div>
+	
+	<div class="container">
+          <h1>Audio Transcription</h1>
+        
+	  <!-- 언어 선택 (라디오 버튼) -->
+	  <div class="language-selector">
+	    <label>
+	      <input type="radio" name="language" value="en" checked> English
+	    </label>
+	    <label>
+	      <input type="radio" name="language" value="es"> Spanish
+	    </label>
+		<label>
+			<input type="radio" name="language" value="ja"> Japanese
+		</label>
+		</div>
+		<!-- 모델 선택 -->
+		<div class="model-selector">
+			<label for="modelSelect">Select Model:</label>
+			<select id="modelSelect" class="model-select">
+				<option value="tiny">Tiny Model</option>
+				<option value="base">Base Model</option>
+				<option value="small">Small Model</option>
+				<option value="medium">Medium Model</option>
+				<option value="large">Large Model</option>
+				<option value="large-v2">Large-v2 Model</option>
+			</select>
+		</div>
+
+          <!-- 전송 버튼 -->
+		<button id="send-button" class="send-button">Send Audio</button>
+		
+		<div id="loader" class="loader"></div>
+		<p id="processingText" class="processing-text">처리 중...</p>
+		<!-- 결과 표시 영역 -->
+	  <div id="transcription" class="transcription">
+	    <!-- 텍스트가 여기에 표시됩니다. -->
+	  </div>
+	</div>
+    <script src="index.js"></script>
+</body>
+</html>

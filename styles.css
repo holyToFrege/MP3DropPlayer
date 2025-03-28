@@ -1,0 +1,298 @@
+/* 기본 스타일 */
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#outer-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CC996F;  /* 외부 둥근 사각형 색상 */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#inner-container {
+    width: 92%;
+    height: 90%;
+    background-color: #4B3725;  /* 내부 둥근 사각형 색상 */
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+h2, h3 {
+    font-size: 1.2rem;
+    color: darkgray;
+    margin-bottom: 5px;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+#drop-zone {
+    width: 80%;
+    margin: 20px auto;
+    margin-top: 100px;
+    border: 6px dashed gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    background-color: #2c3032;
+    padding: 20px;
+    border-radius: 15px;
+    height: 650px; /* 원하는 높이로 설정 */    
+}
+
+#drop-image {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* 제목 및 서브 제목 스타일 */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+.dictation-container {
+    display: none;    
+    width: 80%;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Player Container 스타일 */
+#player-container {
+    display: none;
+    width: 80%;
+    height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: space-evenly;
+    /* background-color: #f5f5f5; */
+    background-color: #2c3032;    
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* 버튼 스타일 */
+.round-button, #back-button, .send-button {
+    width: 120px;
+    height: 45px;
+    border-radius: 22px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.2s;
+}
+
+.round-button:hover, #back-button:hover, .send-button:hover {
+    background-color: darkgray;
+}
+
+.send-button {
+    background-color: #28a745;
+}
+.send-button:hover {
+    background-color: #218838;
+}
+
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+}
+
+#back-button:hover {
+    background-color: darkred;
+}
+
+/* 속도 조절 컨트롤 */
+#speed-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#speed-bar {
+    width: 150px;
+    margin: 0 10px;
+}
+
+#speed-label {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* 결과 텍스트 영역 */
+.transcription {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1rem;
+    min-height: 80px;
+    white-space: pre-wrap;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 로딩 애니메이션 */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* "처리 중..." 텍스트 스타일 */
+.processing-text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    display: none;
+}
+/***************************************/
+/* 5s forward, 5s rewind, loop control */
+/***************************************/
+#seek-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#rewind, #forward, #toggle-loop {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#rewind img, #forward img, #toggle-loop img {
+    width: 32px;
+    height: 32px;
+}
+
+#rewind:hover, #forward:hover {
+    background-color: #666;
+}
+
+#rewind:active, #forward:active, #toggle-loop:active {
+    transform: scale(0.95);
+}
+
+/* OFF 상태 */
+#toggle-loop.off {
+    background-color: #444;
+}
+
+/* ON 상태 */
+#toggle-loop.on {
+    background-color: #C66720;
+}
+
+
+#toggle-loop:active {
+    transform: scale(0.95);
+}
+
+#loop-controls {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    gap: 10px; /* 버튼 간격 */
+    margin-top: 10px;
+}
+
+.loop-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.loop-button img {
+    width: 100%;
+    height: 100%;
+}
+

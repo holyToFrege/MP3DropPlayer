@@ -1,0 +1,247 @@
+/* styles.css */
+
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 언어 선택 라디오 버튼 */
+.language-selector {
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.language-selector label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.language-selector input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* 모델 선택 드롭다운 */
+.model-selector {
+    margin-bottom: 30px;
+    text-align: left;
+    display: inline-block;
+}
+
+.model-selector label {
+    font-size: 1rem;
+    margin-right: 10px;
+    color: #333;
+}
+
+.model-select {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* 전송 버튼 */
+.send-button {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #218838;
+}
+
+/* 결과 텍스트 영역 */
+.transcription {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1.1rem;
+    min-height: 100px;
+    white-space: pre-wrap; /* 줄 바꿈 유지 */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Drop Zone 스타일 */
+#drop-zone {
+    width: 600px;
+    /* height: 100vh; */
+    margin: 50px auto;
+    border: 2px dashed gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    /* color: gray; */
+    background-color: #2c3032;
+}
+
+/* Player Container 스타일 */
+#player-container {
+    display: none;  /* 초기에는 숨김 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* width: 600px;  /\* 🔥 크기 증가 *\/ */
+    /* height: 100vh; /\* 🔥 크기 증가 *\/ */
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: auto;
+    /* overflow: auto; /\* 🔥 모든 요소가 보이도록 설정 *\/ */
+
+    
+    /* justify-content: center; /\* 세로 중앙 정렬 *\/ */
+    /* width:400px; */
+    /* height:400px; */
+    /* /\* height: 100vh;  /\\* 전체 화면 높이 사용 *\\/ *\/ */
+    /* overflow: auto;  /\* 내용이 넘칠 경우 스크롤 가능 *\/ */
+    /* padding-bottom: 20px;  /\* 하단 여백 추가 *\/ */
+}
+
+/* 둥근 사각형 버튼 스타일 */
+.round-button {
+    width: 120px;  /* 버튼 크기 키움 */
+    height: 45px;
+    border-radius: 22px;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.round-button:hover {
+    background-color: darkgray;
+}
+
+.round-button.active {
+    background-color: green;
+}
+
+/* 속도 조절 컨트롤 */
+#player-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;  /* 여백 조정 */
+}
+
+#speed-bar {
+    width: 150px;
+    margin: 0 10px;
+}
+
+/* 🎯 속도 표시 글자 크기 고정 (화면 흔들림 방지) */
+#speed-label {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 50px;  /* "3.0x"까지 넉넉하게 확보 */
+    text-align: center;
+}
+
+/* Drop Zone 이미지 스타일 */
+#drop-image {
+    width: 30%;  /* 부모 요소 대비 30% 크기 */
+    max-width: 300px;  /* 최대 너비 제한 */
+    height: auto;  /* 비율 유지 */
+    display: block;
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+
+/* 🔙 Drop Zone으로 돌아가기 버튼 */
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    background-color: darkred;
+}
+#waveform {
+    background-color: white; /* 🎨 배경색 흰색 */
+    border: 1px solid gray;  /* 📏 테두리 추가 */
+}
+/* 🎵 가로 스크롤 가능한 음파 컨테이너 */
+#waveform-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+/* 기본 transcription 스타일 */
+#transcription {
+    min-height: 50px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* 로딩 애니메이션 */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none; /* 기본적으로 숨김 */
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* "처리 중..." 텍스트 스타일 */
+.processing-text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    display: none;
+}
